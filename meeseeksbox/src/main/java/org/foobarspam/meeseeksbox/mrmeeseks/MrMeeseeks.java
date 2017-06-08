@@ -5,7 +5,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class MrMeeseeks {
 		private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 		private Integer id;
-				
+		String[] messageOnRequest = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
+		String messageOnDone = "All done!";
+		String messageOnExplode = "Pooooof";
+		
 		public MrMeeseeks(){
 			this.id = ID_GENERATOR.incrementAndGet();
 		}
@@ -14,6 +17,16 @@ public class MrMeeseeks {
 		public Integer getId(){
 			return this.id;
 		}
+		public String[] getMessageOnRequest(){
+			return this.messageOnRequest;
+		}
+		public String getMessageOnDone(){
+			return this.messageOnDone;
+		}
+		public String getMessageOnExplode(){
+			return this.messageOnExplode;
+		}
+		
 		// Genera un mensaje al crear el meeseek
 		public void sayMessageOnCreate(){
 			System.out.println("I'm Mr Meeseeks " + getId() + ". Look at meeee!");
@@ -29,9 +42,8 @@ public class MrMeeseeks {
 		}
 		
 		private String generateMessageOnRequest(){
-			String[] mensajes = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
-			int numero = ThreadLocalRandom.current().nextInt(mensajes.length);
-			return mensajes[numero];			
+			int numero = ThreadLocalRandom.current().nextInt(getMessageOnRequest().length);
+			return getMessageOnRequest()[numero];			
 		}
 
 }
