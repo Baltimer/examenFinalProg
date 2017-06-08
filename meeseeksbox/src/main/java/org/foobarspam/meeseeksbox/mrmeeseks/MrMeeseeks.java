@@ -10,10 +10,10 @@ public class MrMeeseeks {
 			this.id = ID_GENERATOR.incrementAndGet();
 		}
 
-		public String generateMessageOnRequest(){
+		public void generateMessageOnCreate(){
 		  String[] mensajes = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
 		  int numero = ThreadLocalRandom.current().nextInt(mensajes.length);
-		  return mensajes[numero];
+		  System.out.println(mensajes[numero]);
 		}
 
 }

@@ -9,14 +9,22 @@ public class MrMeeseeksBox {
 		
 	}
 	
+	public MrMeeseeks getMrMeeseeks(){
+		return this.MrMe;
+	}
+	
 	public MrMeeseeks getMrMe(){
 		return this.MrMe;
 	}
 	
 	public void pushButton(ArrayList<MrMeeseeks> setMrMe){
-		MrMe = new MrMeeseeks();
-		setMrMe.add(MrMe);
+		createMrMeeseeks(setMrMe);
+		getMrMe().generateMessageOnCreate();
 	}
 	
+	public void createMrMeeseeks(ArrayList<MrMeeseeks> setMrMt){
+		MrMe = new MrMeeseeks();
+		setMrMt.add(MrMe);
+	}
 	
 }
