@@ -34,11 +34,11 @@ public class TestMrMeeseeks {
 	}
 	
 	@Test
-	public void testGenerateMessageOnCreate(){
+	public void testSayMessageOnRequest(){
 		// Mostrar mensajes aleatorios al requerir un Meeseek
 		System.out.println("\nMensajes aleatorios al aparecer el Meesek:\n");
-		MrMe.generateMessageOnCreate();
-		MrMe.generateMessageOnCreate();
-		MrMe.generateMessageOnCreate();
+		MrMe.sayMessageOnRequest();
+		MrMe.sayMessageOnRequest();
+		MrMe.sayMessageOnRequest();
 	}
 }

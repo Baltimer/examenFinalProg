@@ -9,17 +9,13 @@ public class MrMeeseeksBox {
 		
 	}
 	
-	public MrMeeseeks getMrMeeseeks(){
-		return this.MrMe;
-	}
-	
 	public MrMeeseeks getMrMe(){
 		return this.MrMe;
 	}
 	
 	public void pushButton(ArrayList<MrMeeseeks> setMrMe){
 		createMrMeeseeks(setMrMe);
-		getMrMe().generateMessageOnCreate();
+		getMrMe().sayMessageOnCreate();
 	}
 	
 	public void createMrMeeseeks(ArrayList<MrMeeseeks> setMrMt){

@@ -9,11 +9,29 @@ public class MrMeeseeks {
 		public MrMeeseeks(){
 			this.id = ID_GENERATOR.incrementAndGet();
 		}
+		
+		// SETTERS Y GETTERS
+		public Integer getId(){
+			return this.id;
+		}
+		// Genera un mensaje al crear el meeseek
+		public void sayMessageOnCreate(){
+			System.out.println("I'm Mr Meeseeks " + getId() + ". Look at meeee!");
+		}
 
-		public void generateMessageOnCreate(){
-		  String[] mensajes = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
-		  int numero = ThreadLocalRandom.current().nextInt(mensajes.length);
-		  System.out.println(mensajes[numero]);
+		public void formulateRequest(String request, String action) {
+			sayMessageOnRequest();
+		}
+		
+		public void sayMessageOnRequest(){
+			String mensaje = generateMessageOnRequest();
+			System.out.println(mensaje);
+		}
+		
+		private String generateMessageOnRequest(){
+			String[] mensajes = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
+			int numero = ThreadLocalRandom.current().nextInt(mensajes.length);
+			return mensajes[numero];			
 		}
 
 }
