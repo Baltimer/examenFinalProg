@@ -3,6 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.foobarspam.meeseeksbox.interfaces.Doable;
+import org.foobarspam.meeseeksbox.main.*;
 
 public class MrMeeseeks implements Doable {
 		private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);

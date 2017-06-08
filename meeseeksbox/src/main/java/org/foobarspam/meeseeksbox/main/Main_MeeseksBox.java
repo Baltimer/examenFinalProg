@@ -40,7 +40,27 @@ public class Main_MeeseksBox {
 		for(Integer id : ids){
 			explodeMrMeeseeks(setMrMe, id);   
 		}
+		System.out.println();
 		
+		System.out.println("Ahora quedan " + setMrMe.size() + " MrMeeseeks operativos.");
+		
+		System.out.println("        ___");
+		System.out.println("    . -^   `--,");
+		System.out.println("   /# =========`-_");
+		System.out.println("  /# (--====___====\\");
+		System.out.println(" /#   .- --.  . --.|");
+		System.out.println("/##   |  * ) (   * ),");
+		System.out.println("|##   \\    /\\ \\   / |");
+		System.out.println("|###   ---   \\ ---  |");
+		System.out.println("|####      ___)    #|");
+		System.out.println("|######           ##|");
+		System.out.println(" \\##### ---------- /");
+		System.out.println("  \\####           (");
+		System.out.println("   `\\###          |");
+		System.out.println("     \\###         |");
+		System.out.println("      \\##        |");
+		System.out.println("       \\###.    .)");
+		System.out.println("        `======/");  
 	}
 
 		/* collectIds(setMrMe, ids)
@@ -65,9 +85,17 @@ public class Main_MeeseksBox {
 		 * elimna del conjunto de Mr Meeseeks creados el que ya ha completado su cometido
 		 */	
 	public static void explodeMrMeeseeks(ArrayList<MrMeeseeks> setMrMe, Integer id){
+		// Clonamos setMeMr porque si lo utilizamos para el bucle surgira
+		// una excepcion de tipo "ConcurrentModificationException", ya que no
+		// se puede modificar el objecto sobre el cual estás iterando en el bucle.
+		ArrayList<MrMeeseeks> cloneSetMrMe = new ArrayList<MrMeeseeks>();
 		for(MrMeeseeks MrMe : setMrMe){
+			cloneSetMrMe.add(MrMe);
+		}
+		for(MrMeeseeks MrMe : cloneSetMrMe){
 			if(MrMe.getId() == id){
 				MrMe.stopExisting();
+				setMrMe.remove(MrMe);
 			}
 		}
 	}
