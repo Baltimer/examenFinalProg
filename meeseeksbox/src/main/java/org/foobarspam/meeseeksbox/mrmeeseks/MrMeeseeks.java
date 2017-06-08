@@ -1,20 +1,19 @@
 package org.foobarspam.meeseeksbox.mrmeeseks;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MrMeeseeks {
 		private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 		private Integer id;
-		private MrMeeseeks MrMe = null;
 				
 		public MrMeeseeks(){
 			this.id = ID_GENERATOR.incrementAndGet();
 		}
 
-		/* generateMessageOnRequest()
-		 * elige al azar uno de los tres mensajes
-	         * que lanza Mr Meeseeks cuando se le formula
-		 * la peticion:
-		 * "Oooh yeah! Can do!"; "Yes sireee!"; "Oh, yeah! Yes, ma'am!"
-	         */	
+		public String generateMessageOnRequest(){
+		  String[] mensajes = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
+		  int numero = ThreadLocalRandom.current().nextInt(mensajes.length);
+		  return mensajes[numero];
+		}
 
 }
