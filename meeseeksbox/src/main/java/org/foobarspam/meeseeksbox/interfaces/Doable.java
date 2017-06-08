@@ -1,5 +1,5 @@
 package org.foobarspam.meeseeksbox.interfaces;
 
-public interface Doable {
+public interface Doable extends DoSomethingSimple<Object, Object>{
 
 }

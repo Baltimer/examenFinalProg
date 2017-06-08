@@ -2,7 +2,9 @@ package org.foobarspam.meeseeksbox.mrmeeseks;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class MrMeeseeks {
+import org.foobarspam.meeseeksbox.interfaces.Doable;
+
+public class MrMeeseeks implements Doable {
 		private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 		private Integer id;
 		String[] messageOnRequest = {"Oooh yeah! Can do!", "Yes sireee!", "Oh, yeah! Yes, ma'am!"};
@@ -31,9 +33,15 @@ public class MrMeeseeks {
 		public void sayMessageOnCreate(){
 			System.out.println("I'm Mr Meeseeks " + getId() + ". Look at meeee!");
 		}
-
+		public void sayMessageOnDone(){
+			System.out.println(getMessageOnDone());
+		}
+		
 		public void formulateRequest(String request, String action) {
 			sayMessageOnRequest();
+			String message = doRequest(request, action);
+			System.out.println(message);
+			sayMessageOnDone();
 		}
 		
 		public void sayMessageOnRequest(){
@@ -44,6 +52,11 @@ public class MrMeeseeks {
 		private String generateMessageOnRequest(){
 			int numero = ThreadLocalRandom.current().nextInt(getMessageOnRequest().length);
 			return getMessageOnRequest()[numero];			
+		}
+
+		public String doRequest(String request, String action) {
+			String requestAction = request + " " + action;
+			return requestAction;
 		}
 
 }
