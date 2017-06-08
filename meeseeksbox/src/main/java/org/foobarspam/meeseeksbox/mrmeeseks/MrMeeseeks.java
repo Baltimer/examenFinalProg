@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class MrMeeseeks {
 		private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
 		private Integer id;
+		private MrMeeseeks MrMe = null;
 				
 		public MrMeeseeks(){
 			this.id = ID_GENERATOR.incrementAndGet();
