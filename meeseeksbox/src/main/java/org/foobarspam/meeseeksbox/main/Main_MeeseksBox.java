@@ -30,10 +30,10 @@ public class Main_MeeseksBox {
 		System.out.println();
 		
 		System.out.println("Estos son los Mr Meeseeks creados:");
-		//listMrMeeseeks(setMrMe);
+		listMrMeeseeks(setMrMe);
 		System.out.println();
 		
-		//collectIds(setMrMe, ids);
+		collectIds(setMrMe, ids);
 		
 		System.out.println("Adios, Mr Meeseeks...");
 		
@@ -41,17 +41,34 @@ public class Main_MeeseksBox {
 			explodeMrMeeseeks(setMrMe, id);   
 		}*/
 		
-	    }
+	}
 
 		/* collectIds(setMrMe, ids)
 		 * Almacena en un array los ids de los Mr Meeseeks creados
 		 */
+	public static void collectIds(ArrayList<MrMeeseeks> setMrMe, ArrayList<Integer> ids){
+		for(MrMeeseeks MrMe : setMrMe){
+			ids.add(MrMe.getId());
+		}
+	}
 
 		/* listMrMeeseeks(setMrMe)
 		 * Lista los ids de todos los Mr Meeseeks creados
 		 */
+	public static void listMrMeeseeks(ArrayList<MrMeeseeks> setMrMe){
+		for(MrMeeseeks MrMe : setMrMe){
+			System.out.println(MrMe.getId());
+		}
+	}
 
 		/* explodeMrMeeseeks(setMrMe, id)
 		 * elimna del conjunto de Mr Meeseeks creados el que ya ha completado su cometido
 		 */	
+	public static void explodeMrMeeseeks(ArrayList<MrMeeseeks> setMrMe, Integer id){
+		for(MrMeeseeks MrMe : setMrMe){
+			if(MrMe.getId() == id){
+				MrMe.stopExisting();
+			}
+		}
+	}
 }

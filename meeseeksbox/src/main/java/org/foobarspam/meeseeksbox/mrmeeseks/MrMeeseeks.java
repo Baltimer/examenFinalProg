@@ -36,6 +36,9 @@ public class MrMeeseeks implements Doable {
 		public void sayMessageOnDone(){
 			System.out.println(getMessageOnDone());
 		}
+		public void sayMessageOnExplode(){
+			System.out.println(getMessageOnExplode());
+		}
 		
 		public void formulateRequest(String request, String action) {
 			sayMessageOnRequest();
@@ -57,6 +60,10 @@ public class MrMeeseeks implements Doable {
 		public String doRequest(String request, String action) {
 			String requestAction = request + " " + action;
 			return requestAction;
+		}
+
+		public void stopExisting() {
+			sayMessageOnExplode();
 		}
 
 }
