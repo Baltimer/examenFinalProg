@@ -28,7 +28,7 @@ public class TestMrMeeseeks {
 	
 	@Test
 	public void testPushButton(){
-		// Comprobamos que lo meta en el array list
+		// Comprobamos que lo meta en el array list y que crea el meeseek
 		box.pushButton(setMrMe);
 		assertEquals(1, setMrMe.size());
 	}
@@ -40,5 +40,11 @@ public class TestMrMeeseeks {
 		MrMe.sayMessageOnRequest();
 		MrMe.sayMessageOnRequest();
 		MrMe.sayMessageOnRequest();
+	}
+	
+	@Test
+	public void testDoRequest(){
+		System.out.println("\nComprobar Mensaje del metodo formulateRequest:\n");
+		MrMe.formulateRequest("action", "realized");
 	}
 }

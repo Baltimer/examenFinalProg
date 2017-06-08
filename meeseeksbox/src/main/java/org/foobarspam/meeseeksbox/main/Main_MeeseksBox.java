@@ -37,9 +37,9 @@ public class Main_MeeseksBox {
 		
 		System.out.println("Adios, Mr Meeseeks...");
 		
-		/*for(Integer id : ids){
+		for(Integer id : ids){
 			explodeMrMeeseeks(setMrMe, id);   
-		}*/
+		}
 		
 	}
 
